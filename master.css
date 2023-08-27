@@ -1,0 +1,429 @@
+/* General Styling */
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+:root {
+    font-family: 'Inter', sans-serif;
+
+    /* Start of Primary colors */
+    --green: hsl(163, 72%, 41%);
+    --red: hsl(356, 69%, 56%);
+
+    --facebook: hsl(208, 92%, 53%);
+    --twitter: hsl(203, 89%, 53%);
+    --instagram: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+    --youtube: hsl(348, 97%, 39%);
+    /* End of Primary colors */
+
+
+    /* Start of Dark Theme colors */
+    --vdarkblue: hsl(230, 17%, 14%);
+    --darkblue: hsl(232, 19%, 15%);
+    --vdesblue: hsl(228, 28%, 20%);
+    --desblue: hsl(228, 34%, 66%);
+
+    --toggledark: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+    /* End of Dark Theme colors */
+
+
+    /* Start of Light Theme colors */
+    --vpaleblue: hsl(225, 100%, 98%);
+    --lgrayblue: hsl(227, 47%, 96%);
+    --dgrayblue: hsl(228, 12%, 44%);
+
+    --togglewhite: hsl(230, 22%, 74%)
+    /* End of Light Theme colors */
+}
+
+
+/* Start of page styling */
+.container {
+    height: 100%;
+    padding: 50px 11%;
+    background-color: var(--vdarkblue);
+    color: white;
+    position: relative;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.container::before {
+    content: "";
+    width: 100%;
+    height: 25%;
+    background-color: var(--darkblue);
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.container * {
+    z-index: 1;
+}
+/* End of page styling */
+
+
+/* Start of social section styling */
+.social {
+    display: grid;
+    grid-template-columns: 80%;
+}
+
+.social .head {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.social p {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--desblue);
+}
+
+.social .mode {
+    grid-area: 1 / 2;
+    color: var(--desblue);
+    font-size: 14px;
+    font-weight: 700;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 60px;
+    cursor: pointer;
+}
+
+.social .mode:hover {
+    color: white;
+}
+
+.social .mode::before {
+    content: "";
+    width: 50px;
+    height: 23px;
+    border-radius: 20px;
+    background-image: var(--toggledark);
+    position: absolute;
+    right: 0;
+}
+
+.social .mode::after {
+    content: "";
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--vdesblue);
+    position: absolute;
+    right: 23px;
+    transform: scale(0.6);
+    transition: right 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+
+.social .info {
+    grid-column: 1 / span 2;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+    margin-top: 40px;
+}
+
+.social .info .card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 25px;
+    background-color: var(--vdesblue);
+    border-radius: 5px;
+    position: relative;
+    transition: background-color 0.25s ease-in-out;
+}
+
+.social .info .card::before {
+    content: "";
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.facebook::before {
+    background-color: var(--facebook);
+}
+
+.twitter::before {
+    background-color: var(--twitter);
+}
+
+.instagram::before {
+    background: var(--instagram);
+}
+
+.youtube::before {
+    background-color: var(--youtube);
+}
+
+.info .profile {
+    display: flex;
+    align-items: center;
+    color: var(--desblue);
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.info .profile img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.info .number {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.info .follow {
+    color: var(--desblue);
+    font-size: 11px;
+    letter-spacing: 4.5px;
+    margin-bottom: 25px;
+}
+
+.today {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.today img {
+    margin-right: 3px;
+}
+
+.green {
+    color: var(--green);
+}
+
+.red {
+    color: var(--red);
+}
+
+.info .today img {
+    width: 7px;
+}
+/* End of social section styling */
+
+
+/* Start of overview section styling */
+.overview {
+    margin-top: 40px;
+}
+
+.overview .head {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.overview .analytics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 25px 30px;
+    margin-top: 20px;
+}
+
+.overview .analytics .card {
+    display: grid;
+    grid-template-columns: auto 30%;
+    grid-gap: 25px 0;
+    background-color: var(--vdesblue);
+    border-radius: 5px;
+    padding: 25px;
+    padding-bottom: 20px;
+    transition: background-color 0.25s ease-in-out;
+}
+
+.analytics .card .metric {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--desblue);
+}
+
+.analytics .card .platform {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 5px;
+}
+
+.analytics .card .number {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.analytics .card .percentage {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
+.card .percentage img {
+    width: 7px;
+    margin-right: 3px;
+}
+
+.info .card:hover,
+.analytics .card:hover {
+    background-color: hsl(230, 27%, 30%);
+    cursor: pointer;
+    transition: background-color 0.25s ease-in-out;
+}
+/* End of overview section styling */
+
+
+/* Start of Mobile styling */
+@media (max-width: 767px) {
+
+    html,
+    body {
+        height: unset;
+    }
+    
+    .container {
+        height: 100%;
+        padding: 30px 6%;
+    }
+
+    .container::before {
+        height: 28vh;
+    }
+
+    .social {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .social .head {
+        font-size: 24px;
+    }
+
+    .social > p {
+        font-size: 14px;
+    }
+
+    .social .mode {
+        justify-content: unset;
+        border-top: 1px solid hsl(230, 24%, 21%);
+        padding-top: 20px;
+        margin-top: 20px;
+    }
+
+    .social .info {
+        display: flex;
+        flex-direction: column;
+        grid-gap: 25px;
+        margin-top: 50px;
+    }
+
+    .info .card {
+        width: 100% !important;
+    }
+
+    .overview .analytics {
+        display: flex;
+        flex-direction: column;
+        grid-gap: 15px;
+    }
+}
+/* End of Mobile styling */
+
+
+/* Start of Tablet styling */
+@media (max-width: 1023px) {
+
+    .container {
+        height: unset;
+    }
+
+    .social {
+        grid-template-columns: 75%;
+    }
+
+    .social .info {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .overview .analytics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+/* End of Tablet styling */
+
+
+/* Start of Light Theme styling */
+.l-container {
+    background-color: white;
+}
+
+.l-container::before {
+    background-color: var(--vpaleblue) !important;
+}
+
+.l-social-head,
+.l-card-number {
+    color: var(--vdarkblue) !important;
+}
+
+.l-social-p,
+.l-card-profile,
+.l-card-follow,
+.l-overview-head,
+.l-card-metric {
+    color: var(--dgrayblue) !important;
+}
+
+.l-social-mode:hover {
+    color: var(--desblue) !important;
+}
+
+.l-info-card,
+.l-analytics-card {
+    background-color: var(--lgrayblue) !important;
+}
+
+.l-info-card:hover,
+.l-analytics-card:hover {
+    background-color: hsl(227, 43%, 92%) !important;
+}
+
+.l-mode::before {
+    background: var(--togglewhite) !important;
+}
+
+.l-mode::after {
+    right: -3px !important;
+    background-color: white !important;
+}
+
+.l-mode:hover::before {
+    background: var(--toggledark) !important;
+}
+/* End of Light Theme styling */
